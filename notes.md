@@ -57,3 +57,46 @@ export function Providers({
 }
 ```
 - add publishable key test it out
+
+##CREATE POST
+- convex folder post.ts
+- mutation
+- test it out:
+
+```
+'use client'
+import { api } from "@/convex/_generated/api";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { Authenticated, Unauthenticated, useMutation, } from "convex/react";
+
+
+export default function Home() {
+
+  const createPost = useMutation(api.post.createPost)
+  return (
+    <div>
+       <Unauthenticated>
+        <SignInButton />
+      </Unauthenticated>
+      <Authenticated>
+        <UserButton />
+        <button
+          onClick={() => {
+            // Call the createPost mutation on button click
+            createPost({
+              title: 'Test from front end',
+              description: 'Test description',
+            });
+          }}
+        >
+          Create Post
+        </button>
+
+      </Authenticated>
+    </div>
+  );
+}
+
+
+```
+- build the schema from whats in the database
