@@ -100,3 +100,60 @@ export default function Home() {
 
 ```
 - build the schema from whats in the database
+
+##GET POST
+- add to the api:
+```
+export const getPost = query({
+    async handler(ctx) {
+        return await ctx.db.query('posts').collect()
+    }
+})
+```
+- add ot the page:
+
+```
+'use client'
+import { api } from "@/convex/_generated/api";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { Authenticated, Unauthenticated, useMutation, useQuery, } from "convex/react";
+
+
+export default function Home() {
+
+  const createPost = useMutation(api.post.createPost)
+  const posts = useQuery(api.post.getPost)
+  return (
+    <div>
+       <Unauthenticated>
+        <SignInButton />
+      </Unauthenticated>
+      <Authenticated>
+        <UserButton />
+        <button
+          onClick={() => {
+            // Call the createPost mutation on button click
+            createPost({
+              title: 'Test from front end',
+              description: 'Test description',
+            });
+          }}
+        >
+          Create Post
+        </button>
+        {posts?.map(post => (
+          <div key={post._id}>
+              {post.title}
+          </div>
+        ))}
+
+      </Authenticated>
+    </div>
+  );
+}
+
+```
+
+##ADD USER TO POST
+- add token identifer to the schema
+- update in the createPost

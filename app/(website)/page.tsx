@@ -19,8 +19,8 @@ export default function Home() {
           onClick={() => {
             // Call the createPost mutation on button click
             createPost({
-              title: 'Test from front end',
-              description: 'Test description',
+              title: 'Test from front end 2',
+              description: 'Test description 2',
             });
           }}
         >
