@@ -5,6 +5,7 @@ export default defineSchema({
   posts: defineTable({
     description: v.string(),
     title: v.string(),
+    category: v.string(),
     tokenIdentifer: v.string(),  // Required field
   }).index('by_tokenIdentifier', ['tokenIdentifer']),
 });

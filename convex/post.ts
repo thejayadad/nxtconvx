@@ -6,6 +6,7 @@ export const createPost = mutation({
     args: {
       title: v.string(),
       description: v.string(),
+      category: v.string()
     },
     async handler(ctx, args) {
       // Get the user identity (userId)
@@ -20,6 +21,7 @@ export const createPost = mutation({
       await ctx.db.insert("posts", {
         title: args.title,
         description: args.description,
+        category: args.category,
         tokenIdentifer: userId,  // Ensure that tokenIdentifer is included
       });
     },

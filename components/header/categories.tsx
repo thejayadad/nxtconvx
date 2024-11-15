@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '../Box';
 import { FiSmile, FiHeart, FiThumbsUp, FiMusic, FiBookOpen } from 'react-icons/fi'; // React Icons for categories
 import CategoryBox from './category-box';

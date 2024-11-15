@@ -184,3 +184,5 @@ export default function Home() {
 - write out the style
 - then handle click
 
+##NEW POST PAGE SETUP
+
