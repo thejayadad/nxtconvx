@@ -165,3 +165,22 @@ export default function Home() {
 - header.tsx
 - move auth in page.tsx into header
 
+
+##HEADER
+- header
+- box
+- logo
+- search
+- usermenu
+
+
+## TITLE TEXT
+- add it in
+
+##CATEGORIES
+- style it
+- add to header
+- npm i query-string
+- write out the style
+- then handle click
+

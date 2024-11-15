@@ -1,3 +1,5 @@
+import ActionBar from "@/components/action-bar/action-bar";
+import Box from "@/components/Box";
 
 
 export default function Home() {
@@ -6,7 +8,12 @@ export default function Home() {
   // const posts = useQuery(api.post.getPost)
   return (
     <div>
-        homePage
+        <Box>
+          <ActionBar
+          title="Welcome to the VentBoard"
+          description="The place to share and vent about what's on your mind."
+          />
+        </Box>
     </div>
   );
 }
