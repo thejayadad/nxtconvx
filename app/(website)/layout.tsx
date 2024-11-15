@@ -1,3 +1,4 @@
+import Header from '@/components/header/header';
 import React from 'react'
 
 const layout = ({
@@ -7,6 +8,7 @@ const layout = ({
   }>) => {
   return (
     <div>
+      <Header />
         {children}
     </div>
   )

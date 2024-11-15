@@ -157,3 +157,11 @@ export default function Home() {
 ##ADD USER TO POST
 - add token identifer to the schema
 - update in the createPost
+- updste schema and function
+- test it out with a different username
+
+
+##LOADING
+- header.tsx
+- move auth in page.tsx into header
+
